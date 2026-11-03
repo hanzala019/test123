@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Publish a Website with GitHub Pages</title>
+  <meta name="description" content="A step-by-step guide to publishing your first HTML and CSS page for free with GitHub Pages.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="hero">
+  <p class="hero-intro">In about 15 minutes, you can have your own page at</p>
+  <h1 class="hero-url">your-username<wbr>.github.io<wbr>/my-first-site</h1>
+  <p class="hero-sub">No server, no payment, and no command line. You need a web browser and two small text files. This guide takes you from no account to a live link you can send to anyone.</p>
+  <a class="hero-link" href="#step-1">Start with step 1</a>
+</header>
+
+<main class="guide">
+  <p class="mock-note">The GitHub screens below are simplified drawings with the part you need outlined in yellow. The real pages look a little different and GitHub sometimes moves things, but the labels should match.</p>
+
+  <ol class="steps">
+
+    <li class="step" id="step-1">
+      <div class="step-text">
+        <h2>Create a GitHub account</h2>
+        <p>Go to <a href="https://github.com/signup">github.com/signup</a> and sign up with your email. The free plan is all you need.</p>
+        <p>Choose your username with care, because it becomes part of your website address.</p>
+      </div>
+      <figure class="mock" aria-label="Drawing of the GitHub sign-up form">
+        <div class="gh-bar"><span class="gh-logo"></span> Sign up for GitHub</div>
+        <div class="gh-body gh-narrow">
+          <span class="f-label">Email</span><span class="f-input">you@example.com</span>
+          <span class="f-label">Password</span><span class="f-input">••••••••••••</span>
+          <span class="f-label">Username</span><span class="f-input target">your-username</span>
+          <span class="btn btn-green btn-wide">Create account</span>
+        </div>
+      </figure>
+    </li>
+
+    <li class="step" id="step-2">
+      <div class="step-text">
+        <h2>Make your two files</h2>
+        <p>Create a new folder on your computer. Inside it, use any text editor, such as Notepad or VS Code, to save these two files.</p>
+        <p>Name the first file exactly <code>index.html</code>, all lowercase. GitHub Pages opens this file first when someone visits your site.</p>
+        <p>In Notepad, set "Save as type" to "All files" so the name doesn't end in <code>.txt</code>.</p>
+      </div>
+      <div class="code-stack">
+        <figure class="code">
+          <figcaption>index.html</figcaption>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport"
+        content="width=device-width, initial-scale=1"&gt;
+  &lt;title&gt;My First Site&lt;/title&gt;
+  &lt;link rel="stylesheet" href="style.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Hello, world!&lt;/h1&gt;
+  &lt;p&gt;I published this page myself.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+        </figure>
+        <figure class="code">
+          <figcaption>style.css</figcaption>
+<pre><code>body {
+  font-family: sans-serif;
+  max-width: 600px;
+  margin: 60px auto;
+  padding: 0 20px;
+  background: #fff8d6;
+}
+
+h1 {
+  color: #1a3a8f;
+}</code></pre>
+        </figure>
+        <p class="tip">Double-click <code>index.html</code> to preview it in your browser before you upload it.</p>
+      </div>
+    </li>
+
+    <li class="step" id="step-3">
+      <div class="step-text">
+        <h2>Create a repository</h2>
+        <p>A repository, or repo, is the online folder that holds your site's files.</p>
+        <p>Sign in, select the <strong>+</strong> at the top right of GitHub, and choose <strong>New repository</strong>.</p>
+        <p>Name it <code>my-first-site</code> and set it to <strong>Public</strong>. Then select <strong>Create repository</strong>.</p>
+        <p>The repo name becomes the last part of your address.</p>
+      </div>
+      <figure class="mock" aria-label="Drawing of the Create a new repository form, with the name field and the Create repository button outlined">
+        <div class="gh-bar"><span class="gh-logo"></span> Create a new repository</div>
+        <div class="gh-body">
+          <span class="f-label">Repository name</span>
+          <div class="f-row"><span class="f-input f-small">your-username</span> / <span class="f-input target">my-first-site</span></div>
+          <span class="f-label">Visibility</span>
+          <span class="f-select target">Public <i class="caret"></i></span>
+          <div class="f-end"><span class="btn btn-green target">Create repository</span></div>
+        </div>
+      </figure>
+    </li>
+
+    <li class="step" id="step-4">
+      <div class="step-text">
+        <h2>Upload your files</h2>
+        <p>On your new repo's page, select <strong>uploading an existing file</strong>.</p>
+        <p>Drag in <code>index.html</code> and <code>style.css</code>. Drag the files themselves, not the folder they're in, so that <code>index.html</code> sits at the top level of the repo.</p>
+        <p>Scroll down and select <strong>Commit changes</strong>. A commit is GitHub's word for a saved set of changes.</p>
+      </div>
+      <figure class="mock" aria-label="Drawing of the GitHub upload page with two files added and the Commit changes button outlined">
+        <div class="gh-bar"><span class="gh-logo"></span> my-first-site / Upload files</div>
+        <div class="gh-body">
+          <div class="dropzone">Drag files here to add them to your repository</div>
+          <div class="file-row"><i class="file-icon"></i> index.html</div>
+          <div class="file-row"><i class="file-icon"></i> style.css</div>
+          <span class="f-label">Commit changes</span>
+          <span class="f-input">Add files via upload</span>
+          <div class="f-start"><span class="btn btn-green target">Commit changes</span></div>
+        </div>
+      </figure>
+    </li>
+
+    <li class="step" id="step-5">
+      <div class="step-text">
+        <h2>Turn on GitHub Pages</h2>
+        <p>Your files are on GitHub now, but they aren't a website yet.</p>
+        <ol class="sub">
+          <li>Open your repo's <strong>Settings</strong> tab.</li>
+          <li>Select <strong>Pages</strong> in the left sidebar.</li>
+          <li>Under <strong>Source</strong>, choose <strong>Deploy from a branch</strong>.</li>
+          <li>Under <strong>Branch</strong>, choose <strong>main</strong> and <strong>/ (root)</strong>.</li>
+          <li>Select <strong>Save</strong>.</li>
+        </ol>
+      </div>
+      <figure class="mock" aria-label="Drawing of the repository's Pages settings with Settings, Pages, the source, the branch and Save outlined">
+        <div class="gh-bar"><span class="gh-logo"></span> your-username / my-first-site</div>
+        <div class="gh-tabs"><span>Code</span><span>Issues</span><span>Actions</span><span class="tab-on target">Settings</span></div>
+        <div class="gh-split">
+          <div class="gh-side"><span>General</span><span>Branches</span><span>Actions</span><span class="side-on target">Pages</span></div>
+          <div class="gh-main">
+            <b class="mock-title">GitHub Pages</b>
+            <span class="f-label">Source</span>
+            <span class="f-select target">Deploy from a branch <i class="caret"></i></span>
+            <span class="f-label">Branch</span>
+            <div class="f-row target-group">
+              <span class="f-select">main <i class="caret"></i></span>
+              <span class="f-select">/ (root) <i class="caret"></i></span>
+              <span class="btn target">Save</span>
+            </div>
+          </div>
+        </div>
+      </figure>
+    </li>
+
+    <li class="step" id="step-6">
+      <div class="step-text">
+        <h2>Wait for the build</h2>
+        <p>GitHub now publishes your site, which usually takes a minute or two.</p>
+        <p>To watch the progress, open the <strong>Actions</strong> tab. A workflow called <strong>pages build and deployment</strong> shows a yellow dot while it runs and a green check when it's done.</p>
+      </div>
+      <figure class="mock" aria-label="Drawing of the Actions tab showing a finished pages build and deployment run">
+        <div class="gh-bar"><span class="gh-logo"></span> your-username / my-first-site</div>
+        <div class="gh-tabs"><span>Code</span><span>Issues</span><span class="tab-on target">Actions</span><span>Settings</span></div>
+        <div class="gh-body">
+          <div class="run"><i class="check"></i><div><b>pages build and deployment</b><small>Finished on branch main</small></div></div>
+        </div>
+      </figure>
+    </li>
+
+    <li class="step step-last" id="step-7">
+      <div class="step-text">
+        <h2>Visit your new URL</h2>
+        <p>Go back to <strong>Settings</strong> and then <strong>Pages</strong>. You'll see your address at the top, with a <strong>Visit site</strong> button.</p>
+        <p>The address follows this pattern, with your own username and repo name:</p>
+        <p class="url-pattern">https://your-username.github.io/my-first-site/</p>
+        <p>The link works for anyone, so go ahead and share it.</p>
+      </div>
+      <div class="code-stack">
+        <figure class="mock" aria-label="Drawing of the Pages settings showing your site is live with a Visit site button">
+          <div class="gh-body">
+            <div class="live">
+              <span>Your site is live at <u>https://your-username.github.io/my-first-site/</u></span>
+              <span class="btn target">Visit site</span>
+            </div>
+          </div>
+        </figure>
+        <figure class="browser" aria-label="Drawing of a browser showing the finished Hello, world! page">
+          <div class="browser-bar"><i></i><i></i><i></i><span class="address">your-username.github.io/my-first-site/</span></div>
+          <div class="browser-page">
+            <b>Hello, world!</b>
+            <span>I published this page myself.</span>
+          </div>
+        </figure>
+      </div>
+    </li>
+  </ol>
+
+  <section class="after">
+    <h2>Change your site later</h2>
+    <p>Open a file in your repo, select the pencil icon, make your edit, and select <strong>Commit changes</strong>. To replace a file, upload a new one with the same name. Your live site updates within a couple of minutes.</p>
+
+    <h2>If something goes wrong</h2>
+    <details>
+      <summary>I see a 404 page</summary>
+      <p>Wait a few minutes and refresh, since a first build can take a while. If the 404 stays, check that the file is named exactly <code>index.html</code> and sits at the top level of the repo, not inside a folder.</p>
+    </details>
+    <details>
+      <summary>My page shows up, but with no styling</summary>
+      <p>Check that the <code>href</code> in your <code>&lt;link&gt;</code> tag matches the CSS file name exactly. GitHub Pages treats capitals as different letters, so <code>Style.css</code> and <code>style.css</code> are two separate files.</p>
+    </details>
+    <details>
+      <summary>I can't find the Pages options</summary>
+      <p>Check that the repo is public, since Pages on private repos needs a paid plan. You can change this at the bottom of the <strong>Settings</strong> tab. Also check that you've uploaded at least one file, so that the <strong>main</strong> branch exists.</p>
+    </details>
+    <details>
+      <summary>My changes don't appear</summary>
+      <p>Check the <strong>Actions</strong> tab to see whether the build has finished. If it has, your browser may be showing an old copy, so do a hard refresh with <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>R</kbd>, or <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>R</kbd> on a Mac.</p>
+    </details>
+  </section>
+</main>
+
+<footer class="foot">
+  <p>This guide is itself just one HTML file and one CSS file, published the same way. Want more detail? Read the <a href="https://docs.github.com/en/pages">official GitHub Pages docs</a>.</p>
+</footer>
+
+</body>
+</html>
